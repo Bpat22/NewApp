@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {Redirect} from "react-router-dom";
+import HeroSection from './HeroSection';
+import { homeObjFour } from './Data';
 
 const Login = (props) => {
     const [username, setusername] = useState('');
@@ -23,28 +25,35 @@ const Login = (props) => {
         });  
 
         const content = await response.json();
-
-        setRedirect(true);
         props.setName(content.name);
+        setRedirect(true);
+        
     }
 
     if (redirect) {
-        return <Redirect to="/"/>;
+        return <Redirect to="/Dashboard"/>;
     }
 
     return (
+       
+        <div className="col-sm-4 offset-sm-8"> 
+        
+        <HeroSection {...homeObjFour} />
         <form onSubmit={submit}>
             <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
             <input type="username" className="form-control" placeholder="username" required
                    onChange={e => setusername(e.target.value)}
             />
-
+            <br /><br />
             <input type="password" className="form-control" placeholder="Password" required
                    onChange={e => setPassword(e.target.value)}
             />
-
+            <br /><br />
             <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <br /><br />
         </form>
+        </div>
+        // </HeroSection>
     );
 };
 

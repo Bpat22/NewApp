@@ -12,13 +12,16 @@ function Register() {
 
   const [userName, setuserName]=useState("");
   const [password, setPassword]=useState("");
+  const active = true;
   const [firstName, setfirstName]=useState("");
+  const [email, setEmail]=useState("");
+  const [ssn, setSSN]=useState("");
   const [lastName, setlastName]=useState("");
-  const [email,setEmail]=useState("");
+  const [birthDate,setBirthDate]=useState("");
   const history=useHistory();
 
   async function signUp(){
-    let item = {userName, password, firstName, lastName, email}
+    let item = {userName, password, active, firstName, lastName, birthDate, ssn, email}
     console.warn(item)
   
     let result = await fetch("http://localhost:8080/api/authenticate/createUser", {
@@ -30,9 +33,10 @@ function Register() {
       body: JSON.stringify(item)      
     });
     result=await result.json();
+      
     console.warn("result", result)
     localStorage.setItem("user-info", JSON.stringify(result));
-    history.push("/login")
+    history.push("/login");
   }
   
     return (
@@ -60,8 +64,16 @@ function Register() {
                 value={lastName} onChange={(e) => setlastName(e.target.value)}
               />
               <br /><br />
+              <input type='email' className='form-control' placeholder='SSN' required
+                value={ssn} onChange={(e) => setSSN(e.target.value)}
+              />
+               <br /><br />
               <input type='email' className='form-control' placeholder='Email' required
                 value={email} onChange={(e) => setEmail(e.target.value)}
+              />
+               <br /><br />
+              <input type='birthDate' className='form-control' placeholder='Birthday' required
+                value={birthDate} onChange={(e) => setBirthDate(e.target.value)}
               />
               <br /><br />
               <button className='w-100 btn btn-lg btn-primary' onClick={signUp}>

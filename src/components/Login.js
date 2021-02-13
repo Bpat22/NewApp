@@ -28,15 +28,16 @@ class LoginPage extends React.Component {
     event.preventDefault();
     const user = this.state.userName;
     const pass = this.state.password;
+      console.log(this.state.userName + "lol" );
     const token = await axios.post(
-      'http://localhost:8080/api' + '/authenticate',
-      { username: user, password: pass }
+      'http://localhost:8080/api/authenticate',
+      { userName: user, password: pass }
     );
     this.props.dispatch(addToken(token.data.jwt));
 
     localStorage.setItem('auth', token.data.jwt);
     axios
-      .get('http://localhost:8080/api' + '/Me', {
+      .get('http://localhost:8080/api/Me', {
         headers: { Authorization: `Bearer ${token.data.jwt}` },
       })
       // console.log(info.data);
@@ -91,6 +92,7 @@ class LoginPage extends React.Component {
               <input
                 type='userName'
                 className='form-control'
+                name="userName"
                 placeholder='User Name'
                 required
                 onChange={this.handleChange}
@@ -99,6 +101,7 @@ class LoginPage extends React.Component {
               <br />
               <input
                 type='password'
+                name="password"
                 className='form-control'
                 placeholder='Password'
                 required
@@ -176,36 +179,4 @@ export default withRouter(connect(mapDispatchToProps)(LoginPage));
 //     });
 //   }
 
-//   render() {
-//     return (
-//       <div>
-//         <input
-//           type="text" placeholder = "username"
-//           onChange={(e) => {
-//             this.setState({ username: e.target.value });
-//           }}
-//         />
-//         <br />
-//         <br />
-//         <input
-//           type="password" placeholder="password"
-//           onChange={(e) => {
-//             this.setState({ password: e.target.value });
-//           }}
-//         />
-//         <br />
-//         <br />
-//         <button onClick={() => this.login()}> Login</button>
-//         <br />
-//         <br />
-//         "Not Enrolled?"
-//         <Link to="/register">Sign Up</Link>
-//         Now
-//         <br />
-//         <br />
-//       </div>
-//     );
-//   }
-// }
-
-// export default Login;
+//  

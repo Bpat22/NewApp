@@ -32,3 +32,7 @@ export const addToken = (token) => ({
 export const deleteToken = () => ({
     type: ActionTypes.DELETE_TOKEN
 })
+export const addCheckingAccount = (balance) =>({
+    type: ActionTypes.ADD_CHECKING_ACCOUNTS,
+    payload: balance
+})

@@ -8,6 +8,8 @@ import Register from './components/Register';
 import { Provider } from 'react-redux';
 import Dashboard from './components/Dashboard';
 import { ConfigureStore } from './redux/configureStore';
+import createAccount from './components/createAccount';
+import AboutUs from './components/AboutUs';
 
 import Footer from './components/pages/Footer/Footer';
 
@@ -22,6 +24,10 @@ function App() {
           <Route exact path='/login' component={Login}/>
           <Route exact path='/register' component={Register}/>
       <Route exact path='/Dashboard' component={Dashboard}/>
+      <Route exact path='/createAccount' component={createAccount}/>
+     <Route exact path='/aboutUs' component={AboutUs}/>
+      
+      
 
         </Switch>
         <Footer />

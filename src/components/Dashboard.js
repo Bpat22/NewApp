@@ -44,7 +44,7 @@ class Dashboard extends Component {
                             <hr />
                  
                             <DashboardComponent type = "Checking Account" balance = {checking.balance} id = {checking.id} />
-             <DashboardComponent type = "Savings Account" balance = {this.props.user.savingsAccounts.balance} id = {savings.id} />
+                            <DashboardComponent type = "Savings Account" balance = {this.props.user.savingsAccounts.balance} id = {savings.id} />
                             
 
 

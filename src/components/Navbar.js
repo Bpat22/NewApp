@@ -5,6 +5,8 @@ import './Navbar.css';
 import { MdLanguage } from 'react-icons/md';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
+import ContactUs from './ContactUs';
+import {AboutUs} from './AboutUs';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -35,6 +37,7 @@ function Navbar() {
               <MdLanguage className='navbar-icon' />
               Merit Bank
             </Link>
+
             <div className='menu-icon' onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
             </div>
@@ -45,45 +48,33 @@ function Navbar() {
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link
-                  to='/services'
-                  className='nav-links'
-                  onClick={closeMobileMenu}
+                <Link to='/personalbanking' className='nav-links' onClick={closeMobileMenu}
                 >
-                  Services
+                  Personal Banking
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link
-                  to='/products'
-                  className='nav-links'
-                  onClick={closeMobileMenu}
+                <Link to='/businessbanking' className='nav-links' onClick={closeMobileMenu}
                 >
-                  Products
+                  Business Banking
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link
-                  to='/services'
-                  className='nav-links'
-                  onClick={closeMobileMenu}
+                <Link to='/aboutus' className='nav-links' onClick={closeMobileMenu}
                 >
                   About Us
                 </Link>
               </li>
-              <li className='nav-item'>
-                <Link
-                  to='/products'
-                  className='nav-links'
-                  onClick={closeMobileMenu}
+              <li className='nav-item'> 
+                <Link to='/contactus' className='nav-links' onClick={closeMobileMenu}
                 >
                   Contact Us
                 </Link>
               </li>
-			  <li className='nav-btn'>
+			        <li className='nav-btn'>
                 {button ? (
                   <Link to='/login' className='btn-link'>
-                    <Button buttonStyle='btn--outline'>LOG IN</Button>
+                    <Button buttonStyle='btn--outline'>Log In</Button>
                   </Link>
                 ) : (
                   <Link to='/login' className='btn-link'>
@@ -92,7 +83,7 @@ function Navbar() {
                       buttonSize='btn--mobile'
                       onClick={closeMobileMenu}
                     >
-                      LOG IN
+                      Log In
                     </Button>
                   </Link>
                 )}

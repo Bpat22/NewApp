@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Pricing from './Pricing';
+
 
 class AboutUs extends Component {
     render(){
@@ -6,10 +8,10 @@ class AboutUs extends Component {
     
     return (
         <div>
-            <h3> About Us Page</h3>
+            <Pricing />
         </div>
     )
     }
 }
 
-export default AboutUs
+export default AboutUs;

@@ -20,16 +20,16 @@ function Pricing() {
                   <FaFire />
                 </div>
                 <h3>Team Lead</h3>
-                <h4>Brent Thompson</h4>
-                
+                <h3>Brent Thompson</h3>                
                 <ul className='pricing__container-features'>
-                  <li>100 Transactions</li>
-                  <li>2% Cash Back</li>
-                  <li>$10,000 Limit</li>
+                  <li>Created project in JIRA by setting up the Sprint goal for the team. </li>
+                  <li>Coordination and setting up stand up meetings for team</li>
+                  <li>Made sure that team is on track to meet the deadlines</li>
+                  <li>Jumped in to help team members finish the tasks</li>
                 </ul>
-                <Button buttonSize='btn--wide' buttonColor='primary'>
+                {/* <Button buttonSize='btn--wide' buttonColor='primary'>
                   Select Us
-                </Button>
+                </Button> */}
               </div>
             </Link>
             <Link to='/sign-up' className='pricing__container-card'>
@@ -38,16 +38,16 @@ function Pricing() {
                   <BsXDiamondFill />
                 </div>
                 <h3>Front End</h3>
-                <h4>Bina Patel</h4>
-                
+                <h3>Bina Patel</h3>                
                 <ul className='pricing__container-features'>
-                  <li>1000 Transactions</li>
-                  <li>3.5% Cash Back</li>
-                  <li>$100,000 Limit</li>
+                  <li>Designed the website Merit Bank</li>
+                  <li>Created project using React, bootstrap, react-icon</li>
+                  <li>Created connections to backend using API's</li>
+                  <li>Retrived the data from backend and display on website</li>
                 </ul>
-                <Button buttonSize='btn--wide' buttonColor='blue'>
+                {/* <Button buttonSize='btn--wide' buttonColor='blue'>
                   Select Us
-                </Button>
+                </Button> */}
               </div>
             </Link>
             <Link to='/sign-up' className='pricing__container-card'>
@@ -56,16 +56,16 @@ function Pricing() {
                   <GiCrystalize />
                 </div>
                 <h3>Back End</h3>
-                <h4>Wesly Sharpe</h4>
-                
+                <h3>Wesly Sharpe</h3>                
                 <ul className='pricing__container-features'>
-                  <li>Unlimited Transactions</li>
-                  <li>5% Cash Back</li>
-                  <li>Unlimited Spending</li>
+                  <li>Created the API's for Frontend to connect to</li>
+                  <li>Created the database using MYSQL</li>
+                  <li>Created the connection to the database using JPA</li>
+                  <li>Created different methods to perform operations for project</li>
                 </ul>
-                <Button buttonSize='btn--wide' buttonColor='primary'>
+                {/* <Button buttonSize='btn--wide' buttonColor='primary'>
                   Select Us
-                </Button>
+                </Button> */}
               </div>
             </Link>
           </div>

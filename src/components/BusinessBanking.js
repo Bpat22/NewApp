@@ -1,11 +1,18 @@
-import React from 'react'
+import React, {Component} from 'react';
+import { homeObjTwo } from './Data';
+import HeroSection from './HeroSection';
 
-function BusinessBanking() {
+
+class BusinessBanking extends Component {
+    render(){
+        
+    
     return (
         <div>
-            <h3> Business Banking Page</h3>
+            <HeroSection {...homeObjTwo} />
         </div>
     )
+    }
 }
 
-export default BusinessBanking
+export default BusinessBanking;

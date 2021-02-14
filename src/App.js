@@ -10,6 +10,9 @@ import Dashboard from './components/Dashboard';
 import { ConfigureStore } from './redux/configureStore';
 import createAccount from './components/createAccount';
 import AboutUs from './components/AboutUs';
+import ContactUs from './components/ContactUs';
+import PersonalBanking from './components/PersonalBanking';
+import BusinessBanking from './components/BusinessBanking';
 
 import Footer from './components/pages/Footer/Footer';
 
@@ -23,9 +26,13 @@ function App() {
           <Route path='/' exact component={Home}/>
           <Route exact path='/login' component={Login}/>
           <Route exact path='/register' component={Register}/>
-      <Route exact path='/Dashboard' component={Dashboard}/>
-      <Route exact path='/createAccount' component={createAccount}/>
-     <Route exact path='/aboutUs' component={AboutUs}/>
+          <Route exact path='/dashboard' component={Dashboard}/>
+          <Route exact path='/createAccount' component={createAccount}/>
+          <Route exact path='/aboutUs' component={AboutUs}/>
+          <Route exact path='/contactUs' component={ContactUs}/>
+          <Route exact path='/personalbanking' component={PersonalBanking}/>
+          <Route exact path='/businessbanking' component={BusinessBanking}/>
+
       
       
 

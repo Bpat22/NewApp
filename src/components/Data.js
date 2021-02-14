@@ -39,3 +39,7 @@ export const homeObjFour = {
     img: 'images/svg-8.svg',
     alt: 'Vault'
   };
+
+  export const homeObjFive = {
+    
+  };

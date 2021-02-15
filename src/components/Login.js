@@ -28,7 +28,7 @@ class LoginPage extends React.Component {
     event.preventDefault();
     const user = this.state.userName;
     const pass = this.state.password;
-      console.log(this.state.userName + "lol" );
+  
     const token = await axios.post(
       'http://localhost:8080/api/authenticate',
       { userName: user, password: pass }
@@ -36,7 +36,7 @@ class LoginPage extends React.Component {
     this.props.dispatch(addToken(token.data.jwt));
 
     localStorage.setItem('auth', token.data.jwt);
-    axios
+    await axios
       .get('http://localhost:8080/api/Me', {
         headers: { Authorization: `Bearer ${token.data.jwt}` },
       })

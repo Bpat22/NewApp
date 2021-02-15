@@ -8,7 +8,7 @@ class DashboardComponent extends Component {
     super(props);
   }
   render() {
-    if (this.props.balance == null) {
+    if (this.props.balance == null || this.props == null) {
       return <div>No account</div>;
     } else {
       return (
@@ -45,7 +45,7 @@ class DashboardComponent extends Component {
                       <i className='fa fa-edit pr-1'> Update Account Info</i>
                     </li>
                   </Link>
-                  <Link to='/dashboard' onClick={() => this.deleteBtnClick()}>
+                  <Link to='/deleteAccount' >
                     <li className='list-group-item delete text-danger'>
                       <i className='fa fa-minus-circle pr-1'> Delete Account</i>
                     </li>

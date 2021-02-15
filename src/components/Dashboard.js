@@ -4,6 +4,7 @@ import { withRouter, Link } from 'react-router-dom';
 import { User } from '../redux/user';
 import DashboardComponent from './DashboardComponent';
 import createAccount from './createAccount';
+import { Button, Container, Row, Col } from 'reactstrap';
 
 const mapStateToProps = (state) => {
   return {
@@ -72,21 +73,24 @@ class Dashboard extends Component {
               balance={this.props.user.savingsAccounts.balance}
               id={savings.id}
             />
-            <DashboardComponent
-              type='CD Account'
-              balance={this.props.user.cdAccounts[0].balance}
-              id={this.props.user.cdAccounts[0].id}
-            />
+           
             <DashboardComponent
               type='Roth Ira'
               balance={this.props.user.rothIRA.balance}
               id={this.props.user.rothIRA.id}
             />
+        
             <DashboardComponent
               type='Rollover Ira'
               balance={this.props.user.rolloverIra.balance}
               id={this.props.user.rolloverIra.id}
             />
+         <DashboardComponent
+              type='CD Account'
+              balance={this.props.user.cdAccounts[0].balance}
+              id={this.props.user.cdAccounts[0].id}
+            />
+            
           </div>
         </div>
       </div>

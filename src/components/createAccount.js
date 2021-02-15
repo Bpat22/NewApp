@@ -65,7 +65,7 @@ class createAccount extends Component{
         
             
             <form onSubmit={this.handleSubmit}>
-              <h1 className='my-4'>Please log in</h1>
+              <h1 className='my-4'>Create Account</h1>
               <input
                 type='checkbox'
                 className='form-control'
@@ -91,8 +91,8 @@ class createAccount extends Component{
               </button>
               <br />
               <br />
-              "Not Enrolled?"
-              <Link to="/Register"> Sign Up </Link>
+              
+              <Link to="/Dashboard"> Go Back </Link>
               Now
             </form>
         

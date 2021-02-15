@@ -13,6 +13,7 @@ import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import PersonalBanking from './components/PersonalBanking';
 import BusinessBanking from './components/BusinessBanking';
+import deleteAccount from './components/deleteAccount';
 
 import Footer from './components/pages/Footer/Footer';
 
@@ -32,6 +33,7 @@ function App() {
           <Route exact path='/contactUs' component={ContactUs}/>
           <Route exact path='/personalbanking' component={PersonalBanking}/>
           <Route exact path='/businessbanking' component={BusinessBanking}/>
+          <Route exact path='/deleteAccount' component={deleteAccount}/>
 
       
       

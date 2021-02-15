@@ -6,23 +6,18 @@ import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
 function Home() {
   return (
     <>
-      {/* <div className='container'>
-        <div className='caption Active'>
-          <h2> Bank from Anywhere</h2>
-          <p>One click away from your online banking</p>
-        </div>
-  </div> */}
 
-      <imgage src='images/Buildings.jpg' alt='Buildings' style={{justifyContent:'FaCentercode', alignItems:'center'}}>
-        {/* <text style={{backgroundColor:'transparent'}}>
-          Banking from anywhere
-        </text> */}
-      </imgage>
+      <div className='container'>
+
+      <img src='images/Buildings.jpg' alt='Buildings' >
+        {/* <div className="centered">Banking from ANywhere</div> */}
+      </img>
+      </div>
+
 
       <HeroSection {...homeObjOne} />
-      {/* <HeroSection {...homeObjThree} /> */}
-      {/* <HeroSection {...homeObjTwo} /> */}
-      {/* <HeroSection {...homeObjFour} /> */}
+
+      
     </>
   );
 }

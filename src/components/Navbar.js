@@ -35,7 +35,7 @@ function Navbar() {
           <div className='navbar-container container'>
             <Link to='/' className='navbar logo' onClick={closeMobileMenu}>
               <MdLanguage className='navbar-icon' />
-              Merit Bank
+              <h2>Merit Bank</h2>
             </Link>
 
             <div className='menu-icon' onClick={handleClick}>
@@ -65,12 +65,12 @@ function Navbar() {
                   About Us
                 </Link>
               </li>
-              <li className='nav-item'> 
+              {/* <li className='nav-item'> 
                 <Link to='/contactus' className='nav-links' onClick={closeMobileMenu}
                 >
                   Contact Us
                 </Link>
-              </li>
+              </li> */}
 			        <li className='nav-btn'>
                 {button ? (
                   <Link to='/login' className='btn-link'>
@@ -91,7 +91,7 @@ function Navbar() {
               <li className='nav-btn'>
                 {button ? (
                   <Link to='/register' className='btn-link'>
-                    <Button buttonStyle='btn--outline'>Register</Button>
+                    <Button buttonStyle='btn--outline'>Sign Up</Button>
                   </Link>
                 ) : (
                   <Link to='/register' className='btn-link'>
@@ -100,7 +100,7 @@ function Navbar() {
                       buttonSize='btn--mobile'
                       onClick={closeMobileMenu}
                     >
-                      Register
+                      Sign Up
                     </Button>
                   </Link>
                 )}

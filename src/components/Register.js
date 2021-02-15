@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import { Button, Container, Row, Col } from 'reactstrap';
 import HeroSection from './HeroSection';
-import { homeObjFour } from './Data';
+import { homeObjFour, homeObjFive } from './Data';
 import { Redirect } from 'react-router-dom';
 import { addToken, addUser } from '../redux/ActionCreators';
 import axios from 'axios';
@@ -43,11 +43,11 @@ function Register() {
       <Container>
         <Row>
           <Col md={8}>
-            <HeroSection {...homeObjFour} />
+            <HeroSection {...homeObjFive} />
           </Col>
           <Col md={4}>
             {/* <form onSubmit={this.handleSubmit}> */}
-              <h1 className='my-4'>Please log in</h1>
+              <h1 className='my-4'>Please Sign Up</h1>
               <input type='userName' className='form-control' placeholder='User Name' required
                 value={userName} onChange={(e) => setuserName(e.target.value)} 
               />
@@ -77,7 +77,7 @@ function Register() {
               />
               <br /><br />
               <button className='w-100 btn btn-lg btn-primary' onClick={signUp}>
-                Register
+                Sign Up
               </button>
             {/* </form> */}
           </Col>

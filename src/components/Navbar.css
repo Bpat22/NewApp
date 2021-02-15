@@ -1,14 +1,15 @@
+
 .navbar {
-  background: #1c2237;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
+    background: #1c2237;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
   
   .navbar-container {
     display: flex;
@@ -36,14 +37,19 @@
     align-items: center;
   }
   
+  /* .navbar-icon {
+    margin-right: 1rem;
+  } */
   .navbar-icon {
+    margin-left: 0.5rem;
     margin-right: 0.5rem;
-    margin-bottom: 24px;
-    font-size: 48px;
+    margin-bottom: 12px;
+    font-size: 30px;
     line-height: 1.1;
     font-weight: 600;
     color: #f7f8fa;
   }
+  
   
   .nav-menu {
     display: flex;

@@ -32,7 +32,7 @@ class DashboardComponent extends Component {
               </div>
               <div className='col-md-4 col-12 d-lg-block'>
                 <ul className='list-group'>
-                  <Link to={`/login`}>
+                  <Link to={`/transactions/${user.id}`}>
                     <li className='list-group-item board text-success'>
                       <i className='fa fa-flag-checkered pr-1'>
                         {' '}

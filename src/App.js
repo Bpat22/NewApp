@@ -33,6 +33,7 @@ function App() {
           <Route exact path='/contactUs' component={ContactUs}/>
           <Route exact path='/personalbanking' component={PersonalBanking}/>
           <Route exact path='/businessbanking' component={BusinessBanking}/>
+          <Route exact path='/transactions/:id' component={Transaction}/>
           <Route exact path='/deleteAccount' component={deleteAccount}/>
 
       

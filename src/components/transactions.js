@@ -9,7 +9,7 @@ class Transaction extends Component {
                 <Link to="/dashboard" className="btn btn-default btn-lg mb-3">
                     Back
                 </Link>
-                <Link to={`/trns/add/${id}`} className="btn btn-info btn-lg mb-3">
+                <Link to={`/addTransaction`} className="btn btn-info btn-lg mb-3">
                     <i className="fas fa-plus-circle"> New Transaction</i>
                 </Link>
                 <br />
@@ -58,4 +58,4 @@ class Transaction extends Component {
     }
 }
 
-export default 
+export default withRouter(connect(Transaction));

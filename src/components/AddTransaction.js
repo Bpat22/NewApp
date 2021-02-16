@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { addToken, addUser } from '../redux/ActionCreators';
+import { Redirect } from 'react-router-dom';
 
 const mapStateToProps = state => {
     return {
@@ -16,15 +17,19 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 class AddTransaction extends Component {
+ 
     constructor(props) {
         super(props)
 
         this.state = {
             amount: '',
-            // description: '',
-            type: '1'
+            sourceId: this.props.user.savingsAccounts.id,
+            targetId : '',
+            redirect: false,
+            type : '3'
         }
     }
+
 
     handleChange = (event, fieldName, checkbox) => {
         this.setState({
@@ -32,25 +37,53 @@ class AddTransaction extends Component {
         })
     }
     handleSubmit = async (event) => {
-        let newTransaction = { 
-            amount: this.state.amount, 
-            // description: this.state.description, 
-            type: this.state.type 
-        }
-        this.props.createTransaction(newTransaction,this.props.history,this.props.user.id);
-        event.preventDefault();
+       
+          const bal = this.state.amount;
+        const Sourceid = this.props.user.savingsAccounts.id;
+        const targetID = this.props.user.checkingAccounts.id;
+                               
+             console.log("here");                
+    if(this.state.type == 3){
+         axios.post(
+      'http://localhost:8080/api/Me/Transfer', { amount: bal, sourceAccountID: Sourceid, targetAccountID: targetID},{
+          headers: { Authorization: `Bearer ${this.props.token.token}` }
+      });
     }
-
-    const createTransaction = (newTransaction, history,accountid) => async dispath => {
-        await axios.post(`http://localhost:8080/Me/transaction/${accountid}`, newTransaction)
-            .then((res) => {
-                history.push(`/transactions/${accountid}`)
-            })
+       else  if(this.state.type == 1){
+         axios.post(
+      'http://localhost:8080/api/Me/SavingsAccount/Deposit', { amount: bal},{
+          headers: { Authorization: `Bearer ${this.props.token.token}` }
+      });
+    } else if(this.state.type ==2){
+           axios.post(
+      'http://localhost:8080/api/Me/SavingsAccount/Withdraw', { amount: bal},{
+          headers: { Authorization: `Bearer ${this.props.token.token}` }
+      });
+    }
+    
+      
+    
+        console.log("Got here");
+        
+      const user = await axios.get('http://localhost:8080/api/Me', {
+        headers: { Authorization: `Bearer ${this.props.token.token}` },
+      });
+       console.log("agter .get");
+       this.props.dispatch(addUser(user));
+     
+           this.props.history.push('/dashboard');
+        
+         
+    };
+    if(redirect) {
+    return <Redirect to='/Dashboard' />;
+  }
+   
             // .catch((err) => {
             //     console.log(err);
             //     dispath({type:GET_ERRORS,payload:err.response.data})
             //})
-    }
+    
 
     render() {
         //account id
@@ -61,7 +94,7 @@ class AddTransaction extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 m-auto">
-                            <Link to={`/transactions/${id}`} className="btn btn-light">
+                            <Link to={`/Dashboard`} className="btn btn-light">
                                 Back to Wallet
                     </Link>
                             <h4 className="display-4 text-center">New Transaction</h4>
@@ -98,4 +131,4 @@ class AddTransaction extends Component {
     }
 }
 
-export default withRouter(connect(null,{cmapStateToProps})(AddTransaction));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AddTransaction));

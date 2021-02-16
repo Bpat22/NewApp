@@ -45,12 +45,12 @@ class Dashboard extends Component {
                   <Link className='dropdown-item' to='/createAccount'>
                     Add Account
                   </Link>
-                  <button className='dropdown-item'>Transaction</button>
+                   <Link className='dropdown-item' to='../transactions'>
+                    Transaction
+                  </Link>
                 </div>
               </div>
-              <Link to='/createAccount'>
-                <button>create Account</button>
-              </Link>
+             
 
               <br />
             </div>

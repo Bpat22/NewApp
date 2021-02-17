@@ -56,7 +56,7 @@ class deleteAccount extends Component {
        <div>
            <form onSubmit={this.deleteCDtoSavings}>
            <button className='w-100 btn btn-lg btn-primary' type='submit'>
-                transfer
+                Delete Account
               </button>
            </form>
            </div>

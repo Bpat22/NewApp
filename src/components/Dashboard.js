@@ -17,6 +17,7 @@ class Dashboard extends Component {
     super(props);
   }
   render() {
+    console.log(this.props.user);
     const checking = this.props.user.checkingAccounts;
     console.log(this.props.user.savingsAccounts);
     const savings = this.props.user.savingsAccounts;

@@ -14,6 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => ({
   addUser: () => dispatch(addUser()),
   addToken: () => dispatch(addToken()),
+  dispatch
 });
 
 class AddTransaction extends Component {
@@ -25,7 +26,7 @@ class AddTransaction extends Component {
             amount: '',
             sourceId: this.props.user.savingsAccounts.id,
             targetId : '',
-            redirect: false,
+            // redirect: false,
             type : '3'
         }
     }
@@ -37,47 +38,44 @@ class AddTransaction extends Component {
         })
     }
     handleSubmit = async (event) => {
-       
+        event.preventDefault();
           const bal = this.state.amount;
         const Sourceid = this.props.user.savingsAccounts.id;
         const targetID = this.props.user.checkingAccounts.id;
                                
              console.log("here");                
     if(this.state.type == 3){
-         axios.post(
+         await  axios.post(
       'http://localhost:8080/api/Me/Transfer', { amount: bal, sourceAccountID: Sourceid, targetAccountID: targetID},{
           headers: { Authorization: `Bearer ${this.props.token.token}` }
       });
     }
        else  if(this.state.type == 1){
-         axios.post(
+         await axios.post(
       'http://localhost:8080/api/Me/SavingsAccount/Deposit', { amount: bal},{
           headers: { Authorization: `Bearer ${this.props.token.token}` }
       });
     } else if(this.state.type ==2){
-           axios.post(
+           await axios.post(
       'http://localhost:8080/api/Me/SavingsAccount/Withdraw', { amount: bal},{
           headers: { Authorization: `Bearer ${this.props.token.token}` }
       });
     }
-    
-      
-    
-        console.log("Got here");
+      console.log("Got here");
         
       const user = await axios.get('http://localhost:8080/api/Me', {
         headers: { Authorization: `Bearer ${this.props.token.token}` },
       });
-       console.log("agter .get");
-       this.props.dispatch(addUser(user));
+       console.log("after .get", user);
+       this.props.dispatch(addUser(user.data));
      
            this.props.history.push('/dashboard');
         
          
     };
-    if(redirect) {
-    return <Redirect to='/Dashboard' />;
-  }
+//     if(redirect) {
+//     return <Redirect to='/Dashboard' />;
+//   }
    
             // .catch((err) => {
             //     console.log(err);

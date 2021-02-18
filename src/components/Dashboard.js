@@ -16,6 +16,7 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     console.log(this.props.user);
     const checking = this.props.user.checkingAccounts;
@@ -59,7 +60,7 @@ class Dashboard extends Component {
             <div className='card text-center'>
               <div className='card-header bg-success text-white'>
                 <h4>Current Total Balance</h4>
-                <h1> ${this.props.user.combinedBalance}</h1>
+                <h1> ${this.props.user.combinedBalance}.00</h1>
               </div>
             </div>
             <hr />
@@ -91,6 +92,7 @@ class Dashboard extends Component {
               balance={this.props.user.cdAccounts[0].balance}
               id={this.props.user.cdAccounts[0].id}
             />
+            
             
           </div>
         </div>

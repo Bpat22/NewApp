@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+
 class DashboardComponent extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    if (this.props.balance == null || this.props == null) {
+    if (this.props.balance == null || this.props == null|| this.props.id == null) {
       return <div>No account</div>;
     } else {
       return (
@@ -28,7 +29,7 @@ class DashboardComponent extends Component {
 
               <div className='col-lg-4 col-md-3 col-6 text-center'>
                 <h3>Balance</h3>
-                <h1> {this.props.balance}</h1>
+                <h1> ${this.props.balance}.00</h1>
               </div>
               <div className='col-md-4 col-12 d-lg-block'>
                 <ul className='list-group'>

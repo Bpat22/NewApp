@@ -96,6 +96,11 @@ function Dashboard(props){
               id={props.user.rolloverIra.id}
             />
          <DashboardComponent
+              type='Ira'
+              balance={props.user.regularIra.balance}
+              id={props.user.regularIra.id}
+            />
+         <DashboardComponent
               type='CD Account'
               balance={props.user.cdAccounts[0].balance}
               id={props.user.cdAccounts[0].id}

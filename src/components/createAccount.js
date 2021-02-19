@@ -28,6 +28,7 @@ class createAccount extends Component {
     this.state = {
       name: '',
       balance: '',
+        endpoint: ''
     };
   }
   handleChange = (event) => {
@@ -36,13 +37,20 @@ class createAccount extends Component {
       [event.target.name]: event.target.value,
     });
   };
+handleAccount = (event, fieldName) => {
+    this.setState({
+      [fieldName]: event.target.value,
+      // [targetId]: event.target.value
+    });
+  };
   handleSubmit = async (event) => {
     event.preventDefault();
 
     const bal = this.state.balance;
+      const end = this.state.endpoint;
 
     await axios.post(
-      'http://localhost:8080/api/Me/CheckingAccount',
+      'http://localhost:8080/api/Me/' + end,
       { balance: bal },
       {
         headers: { Authorization: `Bearer ${this.props.token.token}` },
@@ -73,31 +81,20 @@ class createAccount extends Component {
               <h2 className>Create Account</h2>
               <br />
               <div class='dropdown'>
-                <button
-                  class='btn btn-secondary btn-sm dropdown-toggle'
-                  type='button'
-                  id='dropdownMenuButton'
-                  data-toggle='dropdown'
-                  aria-haspopup='true'
-                  aria-expanded='false'
-                >
-                  Select Account
-                </button>
-                <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                  <a class='dropdown-item' href='#'>
-                    CheckingAccount
-                  </a>
-                  <a class='dropdown-item' href='#'>
-                    SavingsAccounts
-                  </a>
-                  <a class='dropdown-item' href='#'>
-                    CDAccounts
-                  </a>
-                  <a class='dropdown-item' href='#'>
-                    IRAAccounts
-                  </a>
+               
+                  <select className='btn btn-secondary btn-sm dropdown-toggle' value={this.state.endpoint} onChange= {(event) => this.handleAccount(event, 'endpoint')}>
+                
+                <option selected value = '0'>From Account</option>
+                  <option value='CheckingAccount'>CheckingAccount</option>
+                  <option value='SavingsAccount'>SavingsAccount</option>
+                  <option value='CDAccounts'>CDAccount</option>
+                  <option value='IRA'>IRAAccount</option>
+                    <option value='RolloverIRA'>RolloverIRAAccount</option>
+                    <option value='RothIRA'>RothIRAAccount</option>
+                </select>
                 </div>
                 {/* </div> */}
+                <div>
                 <br />
                 <br />
                 <input

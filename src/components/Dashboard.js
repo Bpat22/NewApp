@@ -5,6 +5,7 @@ import { User } from '../redux/user';
 import DashboardComponent from './DashboardComponent';
 import createAccount from './createAccount';
 import { Button, Container, Row, Col } from 'reactstrap';
+//import {CDAccountsCard} from './CdAccountComponent';
 
 const mapStateToProps = (state) => {
   return {
@@ -101,6 +102,7 @@ function Dashboard(props){
               // balance={isThereBalance}
               // id={isThereId}
             />
+    
             
             
           </div>

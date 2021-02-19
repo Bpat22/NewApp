@@ -7,6 +7,7 @@ import { addToken, addUser } from '../redux/ActionCreators';
 import axios from 'axios';
 import { withRouter, Link, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
+import '../App.css';
 
 function Register() {
 
@@ -41,7 +42,7 @@ function Register() {
   }
   
     return (
-      <Container>
+      <Container className='registerSection'>
         <Row>
           <Col md={8}>
             <HeroSection {...homeObjFive} />

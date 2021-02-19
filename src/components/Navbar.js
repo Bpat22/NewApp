@@ -33,7 +33,7 @@ function Navbar() {
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar' >
           <div className='navbar-container container'>
-            <Link to='/' className='navbar logo' onClick={closeMobileMenu}>
+            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
               <MdLanguage className='navbar-icon' />
               <h2>Merit Bank</h2>
             </Link>

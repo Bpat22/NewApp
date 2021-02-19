@@ -44,10 +44,13 @@ class AddTransaction extends Component {
     });
   };
   handleSubmit = async (event) => {
+      
+     
     event.preventDefault();
     const bal = this.state.amount;
     const sourceId = this.state.sourceId;
     const targetId = this.state.targetId;
+      console.log(sourceId);
 
     console.log('here');
     if (this.state.type == 3) {
@@ -111,28 +114,31 @@ class AddTransaction extends Component {
               <form onSubmit={this.handleSubmit}>
                 <ButtonGroup>
                 <div className='dropdown'>
-                  <button className='btn btn-secondary btn-sm dropdown-toggle' type='button' id='dropdownMenuButton' 
-                  data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' >
-                    From Account
-                  </button>
-                  <div class='dropdown-menu' aria-labelledby='dropdownMenuButton' >
-                    <a class='dropdown-item' href='#'>CheckingAccount</a>
-                    <a class='dropdown-item' href='#'>SavingsAccounts</a>
-                    <a class='dropdown-item' href='#'>CDAccounts</a>
-                    <a class='dropdown-item' href='#'>IRAAccounts</a>
-                  </div>
-                </div>
-                <div className='dropdown'>
-                  <button className='btn btn-secondary btn-sm dropdown-toggle' type='button' id='dropdownMenuButton' 
-                  data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' >
-                    To Account
-                  </button>
-                  <div class='dropdown-menu' aria-labelledby='dropdownMenuButton' >
-                    <a class='dropdown-item' href='#'>CheckingAccount</a>
-                    <a class='dropdown-item' href='#'>SavingsAccounts</a>
-                    <a class='dropdown-item' href='#'>CDAccounts</a>
-                    <a class='dropdown-item' href='#'>IRAAccounts</a>
-                  </div>
+                  
+        
+                <select className='btn btn-secondary btn-sm dropdown-toggle' value={this.state.sourceID} onChange= {(event) => this.handleAccount(event, 'sourceId')}>
+                
+                <option selected value = '0'>From Account</option>
+                  <option value={this.props.user.checkingAccounts.id}>CheckingAccount</option>
+                  <option value={this.props.user.savingsAccounts.id}>SavingsAccount</option>
+                  <option value={this.props.user.cdAccounts[0].id}>CDAccount</option>
+                  <option value={this.props.user.regularIra.id}>IRAAccount</option>
+                    <option value={this.props.user.rolloverIra.id}>RolloverIRAAccount</option>
+                    <option value={this.props.user.rothIRA.id}>RothIRAAccount</option>
+                </select>
+                    <select className='btn btn-secondary btn-sm dropdown-toggle' value="target account" onChange= {(event) => this.handleAccount(event, 'targetId')}>
+                        <option selected value = '0'>To Account</option>
+                    <option value={this.props.user.checkingAccounts.id}>CheckingAccount</option>
+                  <option value={this.props.user.savingsAccounts.id}>SavingsAccount</option>
+                  <option  value={this.props.user.cdAccounts[0].id}>CDAccount</option>
+                  <option value={this.props.user.regularIra.id}>IRAAccount</option>
+                    <option value={this.props.user.rolloverIra.id}>RolloverIRAAccount</option>
+                    <option value={this.props.user.rothIRA.id}>RothIRAAccount</option>
+                </select>
+        
+        
+        
+                  
                 </div>
                 </ButtonGroup>
                 <div className='form-group'>

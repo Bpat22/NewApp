@@ -36,18 +36,18 @@ class Dashboard extends Component {
               <div className='btn-group'>
                 <button
                   type='button'
-                  className='btn btn-info btn-lg dropdown-toggle'
+                  className='btn btn-secondary btn-lg dropdown-toggle'
                   data-toggle='dropdown'
                   aria-haspopup='true'
                   aria-expanded='false'
                 >
-                  Create new
+                  Create Account
                 </button>
                 <div className='dropdown-menu'>
                   <Link className='dropdown-item' to='/createAccount'>
-                    Add Account
+                    Create Account
                   </Link>
-                   <Link className='dropdown-item' to='../transactions'>
+                   <Link className='dropdown-item' to='/transactions'>
                     Transaction
                   </Link>
                 </div>
@@ -58,7 +58,7 @@ class Dashboard extends Component {
             </div>
             <br />
             <div className='card text-center'>
-              <div className='card-header bg-success text-white'>
+              <div className='card-header bg-dark text-white'>
                 <h4>Current Total Balance</h4>
                 <h1> ${this.props.user.combinedBalance}.00</h1>
               </div>

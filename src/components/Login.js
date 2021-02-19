@@ -58,27 +58,7 @@ class LoginPage extends React.Component {
     });
   };
   render() {
-    //   return (
-
-    //        <body class="login-Wrapper">
-    //          <div class="login-container">
-    //          <h1> User Login</h1>
-    //         <form onSubmit={this.handleSubmit}>
-    //         <div class= "input-div">
-    //             <h2> Username </h2>
-    //         <input  type= "text" name="userName" onChange={this.handleChange}/>
-    //             <br/>
-    //             <h2> Password </h2>
-    //         <input   type="password" name= "password" onChange={this.handleChange}/>
-    //             <br/>
-    //             <button type ="submit" class="btn btn-primary">Login</button>
-    //         </div>
-    //         </form>
-    //         </div>
-    //         </body>
-
-    // )
-
+ 
     return (
       <Container>
         <Row>

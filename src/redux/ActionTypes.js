@@ -15,3 +15,4 @@ export const USER_FAILED = 'USER_FAILED';
 export const USER_LOADING = 'USER_LOADING';
 export const ADD_TOKEN = 'ADD_TOKEN';
 export const DELETE_TOKEN = 'DELETE_TOKEN';
+export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';

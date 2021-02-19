@@ -37,6 +37,7 @@ function Register() {
     console.warn("result", result)
     localStorage.setItem("user-info", JSON.stringify(result));
     history.push("/Dashboard");
+    // history.push("Login");
   }
   
     return (

@@ -92,15 +92,16 @@ class AddTransaction extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 m-auto">
-                            <Link to={`/Dashboard`} className="btn btn-light">
-                                Back to Wallet
-                    </Link>
-                            <h4 className="display-4 text-center">New Transaction</h4>
+                        <Link to={`/Dashboard`} className="btn btn-light">
+                            Back to Account Detail
+                        </Link>
+                            <h3 className="display-4 text-center">New Transaction</h3>
                             <p className="lead text-center">Account</p>
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group">
                                     <input type="number" min="1" value={amount} onChange={event => this.handleChange(event, "amount", false)} className="form-control form-control-lg" placeholder="Amount" />
                                 </div>
+                                <br />
                                 {/* <div className="form-group">
                                     <textarea value={description} onChange={event => this.handleChange(event, "description", false)} className="form-control form-control-lg" placeholder="Description"></textarea>
                                 </div> */}
@@ -120,6 +121,8 @@ class AddTransaction extends Component {
                                     </div>
                                 </div>
                                 <input type="submit" className="btn btn-primary btn-block mt-4" />
+                                <br/>
+                                
                             </form>
                         </div>
                     </div>

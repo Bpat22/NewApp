@@ -15,9 +15,9 @@ import PersonalBanking from './components/PersonalBanking';
 import BusinessBanking from './components/BusinessBanking';
 import deleteAccount from './components/deleteAccount';
 import addTransaction from './components/AddTransaction';
-
-
 import Footer from './components/pages/Footer/Footer';
+import transactions from './components/transactions';
+
 
 const store = ConfigureStore();
 function App() {
@@ -35,9 +35,9 @@ function App() {
           <Route exact path='/contactUs' component={ContactUs}/>
           <Route exact path='/personalbanking' component={PersonalBanking}/>
           <Route exact path='/businessbanking' component={BusinessBanking}/>
-          <Route exact path='/transactions/' component={addTransaction}/>
+          <Route exact path='/transactions/' component={transactions}/>
           <Route exact path='/deleteAccount' component={deleteAccount}/>
-       <Route exact path='/addTransaction/' component={addTransaction}/>
+          <Route exact path='/addTransaction/' component={addTransaction}/>
 
       
       

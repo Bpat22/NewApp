@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 import { addToken, addUser } from '../redux/ActionCreators';
 import { User } from '../redux/user';
+
 const mapStateToProps = state => {
     return {
         user: state.user,
@@ -16,30 +17,15 @@ const mapDispatchToProps = (dispatch) => ({
   addUser: () => dispatch(addUser())
  
 });
-class deleteAccount extends Component {
-    
-   
+class deleteAccount extends Component {      
   
-    deleteCDtoSavings = async (event) =>{
-        
-        const bal = this.props.user.checkingAccounts.balance;
-        const Sourceid = this.props.user.checkingAccounts.id;
-        const targetID = this.props.user.savingsAccounts.id;
-                               
-                             
-    
-    const r = await axios.post(
-      'http://localhost:8080/api/Me/Transfer', { amount: bal, sourceAccountID: Sourceid, targetAccountID: targetID},{
-          headers: { Authorization: `Bearer ${this.props.token.token}` }
-      });
-        console.log("Got here");
-        
-        
+    deleteAccount = async (event) =>{
+        //id
+    const Sourceid = this.props.user.data
     const d = await axios.delete(
     'http://localhost:8080/api/Me/Delete/' + Sourceid,{
           headers: { Authorization: `Bearer ${this.props.token.token}` }
       });
-
 
      await axios.get('http://localhost:8080/api/Me', {
         headers: { Authorization: `Bearer ${this.props.token.token}` },
@@ -51,21 +37,16 @@ class deleteAccount extends Component {
   };
         
    render(){
-       return(
-       
+       return(       
        <div>
-           <form onSubmit={this.deleteCDtoSavings}>
-           <button className='w-100 btn btn-lg btn-primary' type='submit'>
+           <form onSubmit={this.deleteAccount}>
+           <button className='w-100 btn btn-lg btn-danger' type='submit'>
                 Delete Account
               </button>
            </form>
            </div>
-       
-       
-       
        )
-   }
-    
+   }  
     
 }
-export default withRouter(connect(mapStateToProps)(deleteAccount));
+export default deleteAccount;

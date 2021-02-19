@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-
+import { deleteToken, deleteAccount  } from '../redux/ActionCreators';
+// import deleteAccount from './deleteAccount';
 
 class DashboardComponent extends Component {
   constructor(props) {
     super(props);
+
+    // deleteBtnClick = () => {
+    //   if(window.confirm("Are you sure, you want to delete this Account?")){
+    //     this.props.deleteAccount(this.props.user.data)
+    //   }
+    // }
   }
   render() {
     if (this.props.balance == null || this.props == null|| this.props.id == null) {
@@ -37,7 +44,7 @@ class DashboardComponent extends Component {
                     <li className='list-group-item board text-success'>
                       <i className='fa fa-flag-checkered pr-1'>
                         {' '}
-                        Transfer
+                        Transfer Amount
                       </i>
                     </li>
                   </Link>
@@ -46,7 +53,7 @@ class DashboardComponent extends Component {
                       <i className='fa fa-edit pr-1'> Update Account Info</i>
                     </li>
                   </Link>
-                  <Link to='/deleteAccount' >
+                  <Link to={'/deleteAccount'}>
                     <li className='list-group-item delete text-danger'>
                       <i className='fa fa-minus-circle pr-1'> Delete Account</i>
                     </li>

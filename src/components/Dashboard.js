@@ -12,18 +12,25 @@ const mapStateToProps = (state) => {
     token: state.token,
   };
 };
-class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-  }
+// class Dashboard extends Component {
+//   constructor(props) {
+//     super(props);
+//   }
+function Dashboard(props){
 
-  render() {
-    console.log(this.props.user);
-    const checking = this.props.user.checkingAccounts;
-    console.log(this.props.user.savingsAccounts);
-    const savings = this.props.user.savingsAccounts;
+  // render() {
+    // console.log(this.props.user);
+    // const checking = this.props.user.checkingAccounts;
+    // console.log(this.props.user.savingsAccounts);
+    // const savings = this.props.user.savingsAccounts;
     // const dashComp = checking.map(checkingAccount=>(<DashboardComponent {checkingAccounts.id} checkingAccounts{checkingAccount}/>
     //))
+
+    const checking = props.user.checkingAccounts;
+    const savings = props.user.savingsAccounts;
+
+    // let isThereBalance = props.user.cdAccounts[0] ? props.user.sdAccounts[0].balance : "No Cd Account"
+    // let isThereId = props.user.cdAccounts[0] ? props.user.cdAccounts[0].id : "No user found"
 
     return (
       <div className='projects'>
@@ -31,7 +38,7 @@ class Dashboard extends Component {
           <div className='row'>
             <div className='col-md-12'>
               <h1 className='display-4 text-center'>
-                Welcome, {this.props.user.firstName} {this.props.user.lastName}
+                Welcome, {props.user.firstName} {props.user.lastName}
               </h1>
               <div className='btn-group'>
                 <button
@@ -60,7 +67,7 @@ class Dashboard extends Component {
             <div className='card text-center'>
               <div className='card-header bg-dark text-white'>
                 <h4>Current Total Balance</h4>
-                <h1> ${this.props.user.combinedBalance}.00</h1>
+                <h1> ${props.user.combinedBalance}.00</h1>
               </div>
             </div>
             <hr />
@@ -72,25 +79,27 @@ class Dashboard extends Component {
             />
             <DashboardComponent
               type='Savings Account'
-              balance={this.props.user.savingsAccounts.balance}
+              balance={props.user.savingsAccounts.balance}
               id={savings.id}
             />
            
             <DashboardComponent
               type='Roth Ira'
-              balance={this.props.user.rothIRA.balance}
-              id={this.props.user.rothIRA.id}
+              balance={props.user.rothIRA.balance}
+              id={props.user.rothIRA.id}
             />
         
             <DashboardComponent
               type='Rollover Ira'
-              balance={this.props.user.rolloverIra.balance}
-              id={this.props.user.rolloverIra.id}
+              balance={props.user.rolloverIra.balance}
+              id={props.user.rolloverIra.id}
             />
          <DashboardComponent
               type='CD Account'
-              balance={this.props.user.cdAccounts[0].balance}
-              id={this.props.user.cdAccounts[0].id}
+              balance={props.user.cdAccounts[0].balance}
+              id={props.user.cdAccounts[0].id}
+              // balance={isThereBalance}
+              // id={isThereId}
             />
             
             
@@ -98,9 +107,9 @@ class Dashboard extends Component {
         </div>
       </div>
     );
-  }
+  //}
 }
 
 export default withRouter(connect(mapStateToProps)(Dashboard));
 //export default Dashboard;
-//<p>{this.props.user.firstName}</p>
+//<p>{props.user.firstName}</p>

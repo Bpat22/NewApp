@@ -16,7 +16,7 @@ class DashboardComponent extends Component {
     // }
   }
   render() {
-    if (this.props.balance == null || this.props == null|| this.props.id == null) {
+    if (this.props.account == null) {
       return <div>No account</div>;
     } else {
       return (
@@ -25,7 +25,7 @@ class DashboardComponent extends Component {
             <div className='row'>
               <div className='col-lg-4 col-md-3 col-6'>
                 <h3>{this.props.type}</h3>
-                <p>Account Number: {this.props.id}</p>
+                <p>Account Number: {this.props.account.id}</p>
               </div>
 
               {/* to display account open date
@@ -36,7 +36,7 @@ class DashboardComponent extends Component {
 
               <div className='col-lg-4 col-md-3 col-6 text-center'>
                 <h3>Balance</h3>
-                <h1> ${this.props.balance}.00</h1>
+                <h1> ${this.props.account.balance}.00</h1>
               </div>
               <div className='col-md-4 col-12 d-lg-block'>
                 <ul className='list-group'>

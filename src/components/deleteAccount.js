@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
 class deleteAccount extends Component {      
   
     deleteAccount = async (event) =>{
-        //id
+        event.preventDefault()
     const Sourceid = this.props.user.data
     const d = await axios.delete(
     'http://localhost:8080/api/Me/Delete/' + Sourceid,{

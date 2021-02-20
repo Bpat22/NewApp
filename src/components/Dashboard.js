@@ -5,6 +5,7 @@ import { User } from '../redux/user';
 import DashboardComponent from './DashboardComponent';
 import createAccount from './createAccount';
 import { Button, Container, Row, Col } from 'reactstrap';
+import { Redirect } from 'react-router-dom';
 //import {CDAccountsCard} from './CdAccountComponent';
 
 const mapStateToProps = (state) => {
@@ -17,7 +18,16 @@ const mapStateToProps = (state) => {
 //   constructor(props) {
 //     super(props);
 //   }
+
+
 function Dashboard(props){
+    
+    if(props.token.token ==  ''){
+        return(
+            <Redirect to="/login"/>
+        )
+    }
+    console.log(props.user.cdAccounts)
 
   // render() {
     // console.log(this.props.user);
@@ -75,38 +85,32 @@ function Dashboard(props){
 
             <DashboardComponent
               type='Checking Account'
-              balance={checking.balance}
-              id={checking.id}
+              account = {props.user.checkingAccounts}
             />
             <DashboardComponent
               type='Savings Account'
-              balance={props.user.savingsAccounts.balance}
-              id={savings.id}
+            account = {props.user.savingsAccounts}
+             
             />
            
             <DashboardComponent
               type='Roth Ira'
-              balance={props.user.rothIRA.balance}
-              id={props.user.rothIRA.id}
+        
+              account={props.user.rothIRA}
+              
             />
         
             <DashboardComponent
               type='Rollover Ira'
-              balance={props.user.rolloverIra.balance}
-              id={props.user.rolloverIra.id}
+              account={props.user.rolloverIra}
+              
             />
          <DashboardComponent
               type='Ira'
-              balance={props.user.regularIra.balance}
-              id={props.user.regularIra.id}
+              account={props.user.regularIra}
+             
             />
-         <DashboardComponent
-              type='CD Account'
-              balance={props.user.cdAccounts[0].balance}
-              id={props.user.cdAccounts[0].id}
-              // balance={isThereBalance}
-              // id={isThereId}
-            />
+         
     
             
             

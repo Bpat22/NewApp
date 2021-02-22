@@ -28,12 +28,6 @@ class DashboardComponent extends Component {
                 <p>Account Number: {this.props.account.id}</p>
               </div>
 
-              {/* to display account open date
-                        <div className="col-lg-4 col-md-3 col-6">
-                            <h3>{this.props.type}</h3>
-                            <p>Open Date: {this.props.dateopened}</p>                            
-                        </div> */}
-
               <div className='col-lg-4 col-md-3 col-6 text-center'>
                 <h3>Balance</h3>
                 <h1> ${this.props.account.balance}.00</h1>
@@ -48,9 +42,14 @@ class DashboardComponent extends Component {
                       </i>
                     </li>
                   </Link>
-                  <Link to={`/login`}>
+                  <Link to={`/addTransaction`}>
                     <li className='list-group-item update text-info'>
-                      <i className='fa fa-edit pr-1'> Update Account Info</i>
+                      <i className='fa fa-edit pr-1'> Deposit</i>
+                    </li>
+                  </Link>
+                  <Link to={`/addTransaction`}>
+                    <li className='list-group-item update text-info'>
+                      <i className='fa fa-edit pr-1'> Withdraw</i>
                     </li>
                   </Link>
                   <Link to={'/deleteAccount'}>

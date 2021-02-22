@@ -15,8 +15,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-
-
 function Dashboard(props){
     
     if(props.token.token ==  ''){
@@ -24,14 +22,8 @@ function Dashboard(props){
             <Redirect to="/login"/>
         )
     }
- 
-
- 
-
     const checking = props.user.checkingAccounts;
     const savings = props.user.savingsAccounts;
-
-
 
     return (
       <div className='projects'>
@@ -55,13 +47,11 @@ function Dashboard(props){
                   <Link className='dropdown-item' to='/createAccount'>
                     Create Account
                   </Link>
-                   <Link className='dropdown-item' to='/transactions'>
+                  <Link className='dropdown-item' to='/transactions'>
                     Transaction
                   </Link>
                 </div>
               </div>
-             
-
               <br />
             </div>
             <br />
@@ -80,34 +70,22 @@ function Dashboard(props){
             <DashboardComponent
               type='Savings Account'
             account = {props.user.savingsAccounts}
-             
             />
-           
             <DashboardComponent
               type='Roth Ira'
-        
               account={props.user.rothIRA}
-              
             />
-        
             <DashboardComponent
               type='Rollover Ira'
               account={props.user.rolloverIra}
-              
             />
-         <DashboardComponent
+            <DashboardComponent
               type='Ira'
               account={props.user.regularIra}
-             
             />
         <CDAccountsCard accounts = {props.user.cdAccounts}/>
-      
-        
+
         <DBAAccountsCard accounts={props.user.dbaAccounts}/>
-         
-    
-            
-            
           </div>
         </div>
       </div>
@@ -116,5 +94,4 @@ function Dashboard(props){
 }
 
 export default withRouter(connect(mapStateToProps)(Dashboard));
-//export default Dashboard;
-//<p>{props.user.firstName}</p>
+

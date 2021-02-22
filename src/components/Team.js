@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button } from './Button';
-import './Pricing.css';
+import './Team.css';
 import { FaFire } from 'react-icons/fa';
 import { BsXDiamondFill } from 'react-icons/bs';
 import { GiCrystalize } from 'react-icons/gi';
 import { IconContext } from 'react-icons/lib';
 import { Link } from 'react-router-dom';
 
-function Pricing() {
+function Team() {
     return (
 			<IconContext.Provider value={{ color: '#fff', size: 70 }}>
       <div className='pricing__section'>
@@ -76,4 +76,4 @@ function Pricing() {
 
 }
 
-export default Pricing;
+export default Team;

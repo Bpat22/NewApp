@@ -18,7 +18,6 @@ import addTransaction from './components/AddTransaction';
 import Footer from './components/pages/Footer/Footer';
 import transactions from './components/transactions';
 
-
 const store = ConfigureStore();
 function App() {
   return (
@@ -38,10 +37,6 @@ function App() {
           <Route exact path='/transactions/' component={transactions}/>
           <Route exact path='/deleteAccount' component={deleteAccount}/>
           <Route exact path='/addTransaction/' component={addTransaction}/>
-
-      
-      
-
         </Switch>
         <Footer />
     </Router>

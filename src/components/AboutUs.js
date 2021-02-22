@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Pricing from './Pricing';
+import Team from './Team';
 
 
 class AboutUs extends Component {
@@ -8,7 +8,7 @@ class AboutUs extends Component {
     
     return (
         <div>
-            <Pricing />
+            <Team />
         </div>
     )
     }

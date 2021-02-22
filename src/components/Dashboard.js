@@ -6,7 +6,7 @@ import DashboardComponent from './DashboardComponent';
 import createAccount from './createAccount';
 import { Button, Container, Row, Col } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
-//import {CDAccountsCard} from './CdAccountComponent';
+import {CDAccountsCard, DBAAccountsCard} from './CdAccountComponent';
 
 const mapStateToProps = (state) => {
   return {
@@ -14,10 +14,7 @@ const mapStateToProps = (state) => {
     token: state.token,
   };
 };
-// class Dashboard extends Component {
-//   constructor(props) {
-//     super(props);
-//   }
+
 
 
 function Dashboard(props){
@@ -27,21 +24,14 @@ function Dashboard(props){
             <Redirect to="/login"/>
         )
     }
-    console.log(props.user.cdAccounts)
+ 
 
-  // render() {
-    // console.log(this.props.user);
-    // const checking = this.props.user.checkingAccounts;
-    // console.log(this.props.user.savingsAccounts);
-    // const savings = this.props.user.savingsAccounts;
-    // const dashComp = checking.map(checkingAccount=>(<DashboardComponent {checkingAccounts.id} checkingAccounts{checkingAccount}/>
-    //))
+ 
 
     const checking = props.user.checkingAccounts;
     const savings = props.user.savingsAccounts;
 
-    // let isThereBalance = props.user.cdAccounts[0] ? props.user.sdAccounts[0].balance : "No Cd Account"
-    // let isThereId = props.user.cdAccounts[0] ? props.user.cdAccounts[0].id : "No user found"
+
 
     return (
       <div className='projects'>
@@ -110,6 +100,10 @@ function Dashboard(props){
               account={props.user.regularIra}
              
             />
+        <CDAccountsCard accounts = {props.user.cdAccounts}/>
+      
+        
+        <DBAAccountsCard accounts={props.user.dbaAccounts}/>
          
     
             

@@ -86,11 +86,12 @@ handleAccount = (event, fieldName) => {
                 
                 <option selected value = '0'>From Account</option>
                   <option value='CheckingAccount'>CheckingAccount</option>
-                  <option value='SavingsAccount'>SavingsAccount</option>
+                  <option value='SavingsAccounts'>SavingsAccount</option>
                   <option value='CDAccounts'>CDAccount</option>
                   <option value='IRA'>IRAAccount</option>
                     <option value='RolloverIRA'>RolloverIRAAccount</option>
                     <option value='RothIRA'>RothIRAAccount</option>
+                    <option value='DBACheckingAccount'>DBACheckingAccount</option>
                 </select>
                 </div>
                 {/* </div> */}

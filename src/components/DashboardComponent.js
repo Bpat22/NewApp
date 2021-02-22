@@ -17,7 +17,7 @@ class DashboardComponent extends Component {
   }
   render() {
     if (this.props.account == null) {
-      return <div>No account</div>;
+      return <div></div>;
     } else {
       return (
         <div className='container'>

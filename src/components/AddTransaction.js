@@ -5,6 +5,7 @@ import axios from 'axios';
 import { addToken, addUser } from '../redux/ActionCreators';
 import { Redirect } from 'react-router-dom';
 import { ButtonGroup } from 'reactstrap';
+import '../App.css';
 
 const mapStateToProps = (state) => {
   return {
@@ -102,7 +103,7 @@ class AddTransaction extends Component {
     let id = this.props.user.id;
     const { amount, description, type } = this.state;
     return (
-      <div className='add-PBI'>
+      <div className='add-PBI' id='transPage'>
         <div className='container'>
           <div className='row'>
             <div className='col-md-8 m-auto'>
@@ -112,11 +113,11 @@ class AddTransaction extends Component {
               <h3 className='display-4 text-center'>New Transaction</h3>
               <p className='lead text-center'>Account</p>
               <form onSubmit={this.handleSubmit}>
-                <ButtonGroup>
+                <ButtonGroup id= 'bGroup'>
                 <div className='dropdown'>
                   
         
-                <select className='btn btn-secondary btn-sm dropdown-toggle' value={this.state.sourceID} onChange= {(event) => this.handleAccount(event, 'sourceId')}>
+                <select className='btn btn-secondary btn-sm dropdown-toggle' id="transButton" value={this.state.sourceID} onChange= {(event) => this.handleAccount(event, 'sourceId')}>
                 
                 <option selected value = '0'>From Account</option>
                   <option value={this.props.user.checkingAccounts.id}>CheckingAccount</option>
@@ -125,6 +126,7 @@ class AddTransaction extends Component {
                   <option value={this.props.user.regularIra.id}>IRAAccount</option>
                     <option value={this.props.user.rolloverIra.id}>RolloverIRAAccount</option>
                     <option value={this.props.user.rothIRA.id}>RothIRAAccount</option>
+                    
                 </select>
                     <select className='btn btn-secondary btn-sm dropdown-toggle' value="target account" onChange= {(event) => this.handleAccount(event, 'targetId')}>
                         <option selected value = '0'>To Account</option>

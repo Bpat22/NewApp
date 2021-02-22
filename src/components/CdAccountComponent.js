@@ -40,7 +40,9 @@ export const CDAccountsCard = (accounts) => {
                       <i className='fa fa-edit pr-1'> Update Account Info</i>
                     </li>
                   </Link>
-                  <Link to='/deleteAccount' >
+                   <Link to={{pathname:'/deleteAccount', 
+          id: accounts.accounts[0].id
+          }} >
                     <li className='list-group-item delete text-danger'>
                       <i className='fa fa-minus-circle pr-1'> Delete Account</i>
                     </li>
@@ -94,7 +96,9 @@ export const DBAAccountsCard = (accounts) => {
                       <i className='fa fa-edit pr-1'> Update Account Info</i>
                     </li>
                   </Link>
-                  <Link to='/deleteAccount' >
+                  <Link to={{pathname:'/deleteAccount', 
+          id: accounts.accounts[0].id
+          }} >
                     <li className='list-group-item delete text-danger'>
                       <i className='fa fa-minus-circle pr-1'> Delete Account</i>
                     </li>
@@ -111,4 +115,7 @@ export const DBAAccountsCard = (accounts) => {
         )
     }
 }
+export const Error = `
+  background-color: red;
+`;
 

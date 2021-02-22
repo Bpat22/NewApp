@@ -47,8 +47,8 @@ function Dashboard(props){
                   <Link className='dropdown-item' to='/createAccount'>
                     Create Account
                   </Link>
-                  <Link className='dropdown-item' to='/transactions'>
-                    Transaction
+                  <Link className='dropdown-item' to='/addTransaction'>
+                    Transfer
                   </Link>
                 </div>
               </div>

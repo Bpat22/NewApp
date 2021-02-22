@@ -8,13 +8,8 @@ import { deleteToken, deleteAccount  } from '../redux/ActionCreators';
 class DashboardComponent extends Component {
   constructor(props) {
     super(props);
-
-    // deleteBtnClick = () => {
-    //   if(window.confirm("Are you sure, you want to delete this Account?")){
-    //     this.props.deleteAccount(this.props.user.data)
-    //   }
-    // }
   }
+    
   render() {
     if (this.props.account == null) {
       return <div></div>;
@@ -52,7 +47,9 @@ class DashboardComponent extends Component {
                       <i className='fa fa-edit pr-1'> Withdraw</i>
                     </li>
                   </Link>
-                  <Link to={'/deleteAccount'}>
+                  <Link to={{pathname:'/deleteAccount', 
+          id: this.props.account.id
+          }} >
                     <li className='list-group-item delete text-danger'>
                       <i className='fa fa-minus-circle pr-1'> Delete Account</i>
                     </li>

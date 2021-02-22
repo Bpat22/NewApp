@@ -17,11 +17,14 @@ const mapDispatchToProps = (dispatch) => ({
   addUser: () => dispatch(addUser())
  
 });
-class deleteAccount extends Component {      
+class deleteAccount extends Component {    
+    constructor(props){
+        super(props);
+    }
   
     deleteAccount = async (event) =>{
         event.preventDefault()
-    const Sourceid = this.props.user.data
+    const Sourceid = this.props.location.id
     const d = await axios.delete(
     'http://localhost:8080/api/Me/Delete/' + Sourceid,{
           headers: { Authorization: `Bearer ${this.props.token.token}` }
@@ -39,6 +42,7 @@ class deleteAccount extends Component {
    render(){
        return(       
        <div>
+           <h1>Are you sure you wish to delete account</h1>
            <form onSubmit={this.deleteAccount}>
            <button className='w-100 btn btn-lg btn-danger' type='submit'>
                 Delete Account
@@ -49,4 +53,4 @@ class deleteAccount extends Component {
    }  
     
 }
-export default deleteAccount;
+export default withRouter(connect(mapStateToProps)(deleteAccount));
